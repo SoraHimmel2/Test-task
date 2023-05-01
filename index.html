@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Document</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+
+</head>
+
+<body>
+	<div class="container">
+		<p id="collapseText">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ullamcorper, ante sit amet consequat vestibulum,
+			magna nulla sagittis odio, quis viverra ex justo vel lorem. Nullam malesuada mi eget ultricies tincidunt.
+		</p>
+		<button id="collapseBtn" class="btn btn-primary" onclick="toggleCollapse()">Activate toggle button</button>
+		<button id="hideBtn" class="btn btn-secondary" onclick="hideText()">Hide</button>
+	</div>
+
+	<script>
+		function toggleCollapse() {
+			var collapseText = document.getElementById("collapseText");
+			var collapseBtn = document.getElementById("collapseBtn");
+			var hideBtn = document.getElementById("hideBtn");
+
+			if (collapseText.classList.contains("show")) {
+				collapseText.classList.remove("show");
+				collapseBtn.innerText = "Activate toggle button";
+			} else {
+				collapseText.classList.add("show");
+				collapseBtn.innerText = "Deactivate toggle button";
+			}
+		}
+
+		function hideText() {
+			var collapseText = document.getElementById("collapseText");
+			var collapseBtn = document.getElementById("collapseBtn");
+			var hideBtn = document.getElementById("hideBtn");
+
+			if (collapseText.classList.contains("show")) {
+				if (hideBtn.getAttribute('active') === 'true') {
+					collapseText.removeAttribute('style');
+					hideBtn.innerText = "Hide";
+					hideBtn.setAttribute('active', 'false');
+				} else {
+					collapseText.style.display = "none";
+					hideBtn.innerText = "Show";
+					hideBtn.setAttribute('active', 'true')
+				}
+
+			}
+
+
+
+
+		}
+	</script>
+
+
+</body>
+
+</html>
